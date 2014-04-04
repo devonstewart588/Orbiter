@@ -1,0 +1,47 @@
+
+#define ORBITER_MODULE
+#include "orbitersdk.h"
+
+HINSTANCE g_hDLL;
+
+DLLCLBK void InitModule (HINSTANCE hModule)
+{
+g_hDLL = hModule;
+// perform global module initialisation here
+}
+
+DLLCLBK void ExitModule (HINSTANCE hModule)
+{
+// perform module cleanup here
+}
+class MyVessel: public VESSEL2 {
+public:
+MyVessel (OBJHANDLE hObj, int fmodel): VESSEL2 (hObj, fmodel) {}
+~MyVessel () {}
+void clbkLoadStateEx (FILEHANDLE scn, void *status);
+void clbkSaveState (FILEHANDLE scn);
+private:
+double myparam;
+{
+}
+
+void MyVessel::clbkSaveState (FILEHANDLE scn)
+{
+VESSEL2::clbkSaveState (scn);
+	oapiWriteScenario_float (scn, "MYPARAM", myparam);
+	void MyVessel::clbkSetClassCaps (FILEHANDLE cfg)
+{
+	SetEmptyMass (5000.0); SetSize (10.0);
+	AddMesh (oapiLoadMeshGlobal (“Deltaglider.msh”));
+	THRUSTER_HANDLE th_main;
+}
+
+	
+	
+	const double MAX_MAIN_THRUST = 2e5;
+	const double VAC_MAIN_ISP = 4200.0;
+	th_main = CreateThruster (_V(0,0,-8), _V(0,0,1), MAX_MAIN_THRUST, ph_main, VAC_MAIN_ISP);
+		
+	// define vessel capabilities here
+}
+
