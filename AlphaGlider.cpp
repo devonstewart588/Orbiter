@@ -1,58 +1,49 @@
 #define ORBITER_MODULE
 
-#include "Template.h"
+#include "AlphaGlider.h"
 
-void VLiftCoeff (double aoa, double M, double Re, double *cl, double *cm, double *cd)
-{
-  SetEmptyMass (1000.0);
-  SetSize (10.0);
-  AddMesh (oapiLoadMeshGlobal) ("DeltaGlider.msh")
-  PROPELLANT_HANDLE ph_main
-}
-
-void HLiftCoeff (double beta, double M, double Re, double *cl, double *cm, double *cd)
-{
-}
-
-Template::Template (OBJHANDLE hObj, int fmodel)
+AlphaGlider::AlphaGlider (OBJHANDLE hObj, int fmodel)
 : VESSEL2 (hObj, fmodel)
 {
+  
 }
 
 
-Template::~Template ()
-{
-}
-
-void Template::clbkSetClassCaps (FILEHANDLE cfg)
-{
-}
-
-void Template::clbkLoadStateEx (FILEHANDLE scn, void *vs)
-{
-}
-
-void Template::clbkSaveState (FILEHANDLE scn)
+AlphaGlider::~AlphaGlider ()
 {
 }
 
 
-void Template::clbkPreStep (double simt, double simdt, double mjd)
+void AlphaGlider::clbkSetClassCaps (FILEHANDLE cfg)
 {
 }
 
-void Template::clbkPostStep (double simt, double simdt, double mjd)
+void AlphaGlider::clbkLoadStateEx (FILEHANDLE scn, void *vs)
+{
+}
+
+void AlphaGlider::clbkSaveState (FILEHANDLE scn)
 {
 }
 
 
-int Template::clbkConsumeBufferedKey (DWORD key, bool down, char *kstate)
+void AlphaGlider::clbkPreStep (double simt, double simdt, double mjd)
+{
+}
+
+void AlphaGlider::clbkPostStep (double simt, double simdt, double mjd)
+{
+}
+
+
+int AlphaGlider::clbkConsumeBufferedKey (DWORD key, bool down, char *kstate)
 {
 }
 
 
 DLLCLBK void InitModule (HINSTANCE hModule)
 {
+  G_hDLL;
 }
 
 
