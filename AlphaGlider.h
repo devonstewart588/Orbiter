@@ -1,14 +1,14 @@
-#ifndef __TEMPLATE_H
-#define __TEMPLATE_H
+#ifndef __AlphaGlider_H
+#define __AlphaGlider_H
 
 #define STRICT
 
 #include "orbitersdk.h"
 
-class Template: public VESSEL2 {
+class AlphaGlider: public VESSEL2 {
 public:
-	Template (OBJHANDLE hObj, int fmodel);
-	~Template ();
+	AlphaGlider (OBJHANDLE hObj, int fmodel);
+	~AlphaGlider ();
 	void clbkLoadStateEx (FILEHANDLE scn, void *vs);
 	void clbkSaveState (FILEHANDLE scn);
 	int  clbkConsumeBufferedKey (DWORD key, bool down, char *kstate);
