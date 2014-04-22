@@ -4,6 +4,10 @@
 
 void VLiftCoeff (double aoa, double M, double Re, double *cl, double *cm, double *cd)
 {
+  SetEmptyMass (1000.0);
+  SetSize (10.0);
+  AddMesh (oapiLoadMeshGlobal) ("DeltaGlider.msh")
+  PROPELLANT_HANDLE ph_main
 }
 
 void HLiftCoeff (double beta, double M, double Re, double *cl, double *cm, double *cd)
