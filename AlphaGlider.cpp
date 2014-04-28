@@ -19,7 +19,6 @@ void AlphaGlider::clbkSetClassCaps (FILEHANDLE cfg)
   const double MAX_MAIN_THRUST = 3e12;
   const double MAX_RETRRO_THRUST = 3e12
   th_main = CreateThruster (v(0,0,-8) _v(0,0,1), MAX_MAIN_THRUST,
-  ph_ma
 }
 
 void AlphaGlider::clbkLoadStateEx (FILEHANDLE scn, void *vs)
